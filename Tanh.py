@@ -1,6 +1,6 @@
-'''Гиперболический тангенс (tanh) функция активации:
-
-
+'''
+Hyperbolic tangent (tanh)
+Гиперболический тангенс (tanh)
 '''
 
 import numpy as np
