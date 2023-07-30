@@ -42,7 +42,27 @@ class Swish:
 
 ''''
 The `swish` activation function can be combined with various other activation functions. Some common choices include:
-
+- Softsquare: `return np.power(np.clip(x, 0, 1), 2)`
+- Bent Identity 2: `return (np.sqrt(x * x + 1) - 1) / 2 + x`
+- HardTanh2: `return np.clip(x, -2, 2)`
+- LogLogLog: `return np.log(np.log(np.log(x + 1) + 1) + 1)`
+- Sigmoid-1: `return x * (1 / (1 + np.exp(-x)))`
+- Inverse Square Root Cubic Unit (ISRCU): `return np.where(x >= 0, x, x / np.cbrt(1 + alpha * np.power(x, 3)))` (where `alpha` is a hyperparameter)
+- SoftCube: `return np.power(np.clip(x, -1, 1), 3)`
+- Gaussian 2: `return np.exp(-np.power(x, 2) / 2)`
+- Softplus 2: `return np.log(1 + np.exp(x))`
+- Sinusoid 2: `return np.sin(2*x)`
+- Gaussian Error Linear Unit 2 (GELU2): `return x * (1 + np.tanh(np.sqrt(2 / np.pi) * (x + 0.044715 * np.power(x, 3)))) / 2`
+- HardTanh: `return np.clip(x, -1, 1)`
+- LogSoftmax: `return np.log(softmax(x))`
+- SoftExponential2: `return np.where(x < 0, -np.log(1 - alpha * (x + alpha)) / alpha, np.exp(alpha * x) - 1) / alpha`
+- Inverse Square Root Exponential Linear Unit (ISRELU): `return np.where(x >= 0, x, x / np.sqrt(1 + alpha * np.power(x, 2)))` (where `alpha` is a hyperparameter)
+- Softmin: `return np.exp(-x) / np.sum(np.exp(-x), axis=0)`
+- HardSigmoid: `return np.clip((x + 1) / 2, 0, 1)`
+- LogSigmoid: `return np.log(1 / (1 + np.exp(-x)))`
+- Cube Root: `return np.power(x, 1/3)`
+- Inverse Tangent: `return np.arctan(1 / x)`
+- Sinh: `return np.sinh(x)`
 - ReLU (Rectified Linear Unit): return x * max(0, x)
 - Leaky ReLU: return x * max(0.01 * x, x)
 - Tanh (Hyperbolic tangent):return x * np.tanh(x)
