@@ -1,7 +1,7 @@
 '''
-
+Function derivative of the sigmoid (logistic function)
 Функция производной сигмоиды (логистической функции) на Python может быть реализована следующим образом:
-
+'''
 python
 import numpy as
 
@@ -11,6 +11,7 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     sig = sigmoid(x)
     return sig * (1 - sig)
+'''
 В этом примере мы используем библиотеку NumPy для вычисления экспоненты и элемент-по-элементного умножения. Функция sigmoid вычисляет значение сигмоиды для данного входного значения x, а функция sigmoid_derivative вычисляет производную сигмоиды по формуле sig * (1 - sig), где sig - значение сигмоиды.
 
 Примерания:
