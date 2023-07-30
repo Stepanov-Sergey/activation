@@ -1,4 +1,5 @@
 '''
+how to use.
 output_sigmoid = swish.sigmoid(x)
 output_softmax = swish.softmax(x)
 '''
@@ -41,7 +42,7 @@ class Swish:
         return x * Swish.activation_relu(x)
 
 ''''
-The `swish` activation function can be combined with various other activation functions. Some common choices include:
+TO DO:
 - Softsquare: `return np.power(np.clip(x, 0, 1), 2)`
 - Bent Identity 2: `return (np.sqrt(x * x + 1) - 1) / 2 + x`
 - HardTanh2: `return np.clip(x, -2, 2)`
@@ -88,31 +89,3 @@ The `swish` activation function can be combined with various other activation fu
 - Symmetric Sigmoid: `return 2 / (1 + np.exp(-x)) - 1`
 - SoftExponential: `return np.where(x < 0, -np.log(1 - alpha * (x + alpha)) / alpha, x)`
 - Gaussian Error Linear Unit (GELU): `return 0.5 * x * (1 + np.tanh(np.sqrt(2 / np.pi) * (x + 0.044715 * np.power(x, 3))))`
-    
-
-These are just a few examples. You can combine the `swish` function with any other activation function that suits your needs.
-'''
-'''
-### !!!!!!!!!!!!
-### Обратите внимание, что в функции swish мы используем сигмоидную функцию активации, но Swish может работать с другими функциями активации, такими как ReLU. Вы можете использовать другие функции активации, если необходимо. Кроме того, для повышения производительности такие функции могут быть реализованы с использованием библиотек для машинного обучения, таких как TensorFlow или PyTorch.
-### !!!!!!!!!!!!
-
-import numpy as np
-
-def swish(x):
-    """Функция активации Swish."""
-    return x * sigmoid(x)
-
-def sigmoid(x):
-    """Функция активации Sigmoid."""
-    return 1 / (1 + np.exp(-x))
-
-# Пример использования функции активации Swish
-x = np.array([-2, -1, 0, 1, 2])
-output = swish(x)
-print(output)
-
-
-В этом примере мы определяем функцию swish, которая применяет функцию активации Swish к входному массиву x. Эта функция умножает x на значениe сигмоидной функции sigmoid. Затем, мы определяем функцию sigmoid, которая реализует сигмоидную функцию активации. Затем мы передаем входной массив -2, -1, 0, 1, 2 и печатаем результат.
-
-'''
