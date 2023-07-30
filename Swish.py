@@ -9,22 +9,36 @@ class Swish:
     def activation_sigmoid(x):
         """Sigmoid activation function."""
         return 1 / (1 + np.exp(-x))
-
     @staticmethod
     def activation_softmax(x):
         """Softmax activation function."""
         e_x = np.exp(x - np.max(x))
         return e_x / np.sum(e_x, axis=0)
+    @staticmethod
+    def activation_tanh(x):
+        """Tanh activation function."""
+        return np.tanh(x)
+    def activation_relu(x):
+        """ReLU activation function."""
+        return np.maximum(x, 0)
+
 
     @staticmethod
     def sigmoid(x):
         """Swish activation function using sigmoid."""
         return x * Swish.activation_sigmoid(x)
-
     @staticmethod
     def softmax(x):
         """Swish activation function using softmax."""
         return x * Swish.activation_softmax(x)
+    @staticmethod
+    def tanh(x):
+        """Swish activation function using tanh."""
+        return x * Swish.activation_tanh(x)
+    @staticmethod
+    def relu(x):
+        """Swish activation function using relu."""
+        return x * Swish.activation_relu(x)
         
 '''
 ### !!!!!!!!!!!!
